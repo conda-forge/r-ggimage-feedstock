@@ -1,11 +1,11 @@
-About r-ggimage
-===============
+About r-ggimage-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-ggimage-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/GuangchuangYu/ggimage (devel), https://yulab-smu.top/pkgdocs/ggimage.html (vignette)
 
 Package license: Artistic-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-ggimage-feedstock/blob/main/LICENSE.txt)
 
 Summary: Supports image files and graphic objects to be visualized in 'ggplot2' graphic system.
 
