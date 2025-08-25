@@ -1,5 +1,4 @@
-{% set version = "0.3.3" %}
-
+{% set version = "0.3.4" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -10,38 +9,45 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ggimage_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ggimage/ggimage_{{ version }}.tar.gz
-  sha256: 7a85a5500e982478f21de1e87394fa0ab7037417d8c0c9b38bda5a8b9b09a34a
+  sha256: cf3025848af47384d31c614aecc9697733ca85bcb55cdb92f19875dcbbb762ab
 
 build:
-  number: 1
+  number: 0
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
-  noarch: generic
 
 requirements:
   build:
-    - {{ posix }}zip  # [win]
-
+    - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-ggfun
+    - r-ggiraph
     - r-ggplot2
     - r-ggplotify
     - r-jsonlite
     - r-magick
+    - r-purrr
+    - r-rlang
     - r-scales
     - r-tibble
-
+    - r-withr
   run:
     - r-base
     - r-ggfun
+    - r-ggiraph
     - r-ggplot2
     - r-ggplotify
     - r-jsonlite
     - r-magick
+    - r-purrr
+    - r-rlang
     - r-scales
     - r-tibble
+    - r-withr
 
 test:
   commands:
@@ -62,7 +68,6 @@ extra:
     - thewchan
 
 # The original CRAN metadata for this package was:
-
 # Package: ggimage
 # Title: Use Image in 'ggplot2'
 # Version: 0.3.1
@@ -83,7 +88,6 @@ extra:
 # Maintainer: Guangchuang Yu <guangchuangyu@gmail.com>
 # Repository: CRAN
 # Date/Publication: 2022-04-25 06:40:10 UTC
-
 # See
 # https://docs.conda.io/projects/conda-build for
 # more information about meta.yaml
