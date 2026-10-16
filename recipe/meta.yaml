@@ -1,4 +1,4 @@
-{% set version = "0.3.7" %}
+{% set version = "0.3.8" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ggimage_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ggimage/ggimage_{{ version }}.tar.gz
-  sha256: 843d87b8f7faf09ad91320e3465fc7326551575df6ba26da7e6e7876d2d29a06
+  sha256: 0691f1854d212450389148d5f95a3bddb6742829704cb19b7b9367e688ea7a7b
 
 build:
   number: 0
